@@ -15,3 +15,6 @@ add_action("wp_enqueue_scripts", "wpdocs_theme_name_scripts");
 register_nav_menus( array(
 'menu-principal' => 'Menu principal'
 ) );
+
+function my_function_admin_bar(){ return false; }
+add_filter( 'show_admin_bar' , 'my_function_admin_bar');

@@ -9,22 +9,51 @@
     <meta name="author" content="">
 
     <!– Ajout d'une nouvelle feuille de style qui sera spécifique à notre thème –>
-    <link href="<?php bloginfo('template_directory');?>/blog.css" rel="stylesheet">
-    <?php wp_head(); ?>
+    <link href="<?php bloginfo('template_directory');?>/css/blog.css" rel="stylesheet">
+    <?php wp_head();?>
 </head>
 
 <body>
     <div class="header">
-        <div class="container">
-            <nav id="navigation-principale" role="navigation">
-                <?php wp_nav_menu( array( 'theme_location' => 'menu-principal' ) ); ?>
-            </nav>
+        <nav id="site-navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                    <img src="<?php bloginfo('template_directory');?>/img/logo.png" title="<?php bloginfo('name');?>" /></a>
+                </div>
+            <!--<a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', '_s');?></a>-->
+           <div class="collapse navbar-collapse" id="main-navbar-collapse">
+           <?php wp_nav_menu(array(
+    //'theme_location' => 'primary',
+    'container' => 'ul',
+    'container_class' => '',
+    'menu_class' => 'nav navbar-nav',
+    'menu_id' => '',
+    'echo' => true,
+    'fallback_cb' => 'wp_page_menu',
+    'before' => '',
+    'after' => '',
+    'link_before' => '',
+    'link_after' => '',
+    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+    'depth' => 0,
+    'walker' => '',
+));?>
+</div>
+            </div>
+        </nav><!-- #site-navigation -->
         </div>
     </div>
     <div class="container ">
         <div class="blog-header">
             <h1 class="blog-title">
-                <a href="<?php echo get_bloginfo('wpurl');?>">
+                <a href="<?php echo get_bloginfo('wpurl'); ?>">
                     <?php echo get_bloginfo('name'); ?>
                 </a>
             </h1>

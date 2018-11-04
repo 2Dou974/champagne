@@ -1,0 +1,61 @@
+.header {
+    height: 170px;
+}
+
+#navigation-principale li {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500;
+}
+
+#navigation-principale li a {
+    color: #fff;
+}
+
+
+/* Menu */
+
+.header #site-navigation {
+    background-image: none;
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+a.navbar-brand {
+    padding-top: 0;
+}
+
+.header .container,
+.header .navbar-brand img {
+    height: 150px;
+}
+
+#menu-menu-1 li {
+    margin-top: 25px;
+}
+
+#menu-menu-1 li a {
+    width: 150px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 9px;
+}
+
+.mn-exploitation a {
+    background-image: url(../img/mn_exploit_off.jpg);
+}
+
+.mn-exploitation.current_page_item a {
+    background-image: url(../img/mn_exploit_on.jpg);
+}
+
+.mn-come a {
+    background-image: url(../img/mn_come_off.jpg);
+}
+
+.mn-come.current_page_item a {
+    background-image: url(../img/mn_come_on.jpg);
+}

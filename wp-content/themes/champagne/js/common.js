@@ -26,15 +26,13 @@ $(function() {
     $('.modalLegalAge .btn').off('click').on('click', function() {
         //add cookie oag a 1
         document.cookie = "oag=1;; path=/";
-        $('.modalLegalAge').modal({
-            show: hide
-        });
+        $('.modalLegalAge').modal('hide');
     });
     if (chCommon.readCookie('oag') == null && chCommon.getParameterValues('oag') == null) {
         $('.modalLegalAge').modal({
             show: true,
             keyboard: false,
-            backdrop: false
+            backdrop: 'static'
         })
     }
 });
