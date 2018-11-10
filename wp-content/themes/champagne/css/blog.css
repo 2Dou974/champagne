@@ -14,6 +14,18 @@
 }
 
 
+/*common*/
+
+.btn.btn-silver {
+    background-color: hsl(0, 0%, 16%);
+    background-repeat: repeat-x;
+    background-image: linear-gradient(#5b5b5b, #282828);
+    border-color: #282828 #282828 hsl(0, 0%, 11%);
+    color: #eee;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+}
+
+
 /* Menu */
 
 .header #site-navigation {
@@ -58,4 +70,92 @@ a.navbar-brand {
 
 .mn-come.current_page_item a {
     background-image: url(../img/mn_come_on.jpg);
+}
+
+@media screen and (max-width: 1200px) {
+    #menu-menu-1 li {
+        margin-top: 35px;
+    }
+    #menu-menu-1 li a {
+        width: 120px;
+        padding: 30px 5px;
+        padding-top: 30px;
+        padding-right: 5px;
+        padding-bottom: 30px;
+        padding-left: 5px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header .container,
+    .header .navbar-brand img {
+        height: 95px;
+    }
+    #menu-menu-1 li {
+        margin-top: 15px;
+    }
+    #menu-menu-1 li a {
+        width: 96px;
+        padding: 5px;
+        height: 64px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-header {
+        height: 100px;
+    }
+    ul#menu-menu-1 {
+        background-color: #f8f8f8;
+    }
+    ul#menu-menu-1 li a {
+        background-image: none
+    }
+    ul#menu-menu-1 li.current_page_item a,
+    ul#menu-menu-1 li a:hover {
+        background-color: #e7e7e7;
+    }
+    .header .container,
+    .header .navbar-brand img {
+        height: 95px;
+    }
+    #menu-menu-1 li {
+        margin-top: 0;
+    }
+    #menu-menu-1 li a {
+        width: auto;
+        padding: 5px;
+        height: auto;
+    }
+}
+
+
+/* modal age */
+
+.modalLegalAge .modal-body {
+    background-color: #eee;
+}
+
+.modalLegalAge .roundedImage {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    margin: 0 auto 15px;
+}
+
+.modalLegalAge .roundedImage img {
+    width: 150px;
+    margin: 15px 0 0 14px;
+}
+
+.modalLegalAge p {
+    text-align: center;
+}
+
+.modalLegalAge .btn {
+    margin: 15px auto;
+    display: block;
 }
