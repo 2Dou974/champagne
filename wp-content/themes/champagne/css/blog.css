@@ -1,7 +1,3 @@
-.header {
-    height: 170px;
-}
-
 #navigation-principale li {
     position: relative;
     display: inline-block;
@@ -90,19 +86,23 @@ a.navbar-brand {
 @media screen and (max-width: 992px) {
     .header .container,
     .header .navbar-brand img {
-        height: 95px;
+        height: 90px;
     }
     #menu-menu-1 li {
         margin-top: 15px;
     }
     #menu-menu-1 li a {
-        width: 96px;
+        width: 90px;
         padding: 5px;
-        height: 64px;
+        height: 60px;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .navbar-collapse {
+        position: relative;
+        z-index: 200;
+    }
     .navbar-header {
         height: 100px;
     }
@@ -158,4 +158,35 @@ a.navbar-brand {
 .modalLegalAge .btn {
     margin: 15px auto;
     display: block;
+}
+
+
+/*caroussel*/
+
+.champagne-carrousel {
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.champagne-carrousel .inner-text {
+    position: absolute;
+    z-index: 110;
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    margin-top: -100px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 1em 0;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .champagne-carrousel .inner-text {
+        position: static;
+        width: 100%;
+        padding: 15px;
+        margin: 0;
+        z-index: 1;
+    }
 }

@@ -15,7 +15,7 @@
 
 <body>
     <div class="header">
-        <nav id="site-navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav id="site-navigation" class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
@@ -51,13 +51,3 @@
         </div>
     </div>
     <div class="container ">
-        <div class="blog-header">
-            <h1 class="blog-title">
-                <a href="<?php echo get_bloginfo('wpurl'); ?>">
-                    <?php echo get_bloginfo('name'); ?>
-                </a>
-            </h1>
-            <p class="lead blog-description">
-                <?php echo get_bloginfo('description'); ?>
-            </p>
-        </div>

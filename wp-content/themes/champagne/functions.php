@@ -18,3 +18,15 @@ register_nav_menus( array(
 
 function my_function_admin_bar(){ return false; }
 add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+
+function champagne_widgets_init() {
+    register_sidebar( array(
+        'id'            => 'sidebar-home',
+        'name'          => 'Homepage',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'champagne_widgets_init' );
