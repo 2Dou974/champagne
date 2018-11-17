@@ -1,5 +1,20 @@
 var chCommon = {};
 
+chCommon.preloader = function() {
+    if (document.images) {
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+        var img4 = new Image();
+        var img5 = new Image();
+
+        img1.src = "/wp-content/themes/champagne/img/mn_exploit_on.jpg";
+        img2.src = "/wp-content/themes/champagne/img/mn_champagne_on.jpg";
+        img3.src = "/wp-content/themes/champagne/img/mn_come_on.jpg";
+        img4.src = "/wp-content/themes/champagne/img/mn_actu_on.jpg";
+        img5.src = "/wp-content/themes/champagne/img/mn_contact_on.jpg";
+    }
+}
 chCommon.readCookie = function(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -35,4 +50,5 @@ $(function() {
             backdrop: 'static'
         })
     }
+    chCommon.preloader();
 });

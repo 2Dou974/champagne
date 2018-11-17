@@ -50,22 +50,66 @@ a.navbar-brand {
     background-repeat: no-repeat;
     background-size: contain;
     margin: 0 9px;
+    text-shadow: 1px 1px 2px rgba(48, 48, 48, .25);
+    font-weight: bold;
+    color: #444;
+    font-size: 1.3em;
+    text-align: center;
+    padding-top: 40px;
+    background: rgba(58, 57, 63, 0.6);
 }
 
-.mn-exploitation a {
+#menu-menu-1 li a:hover {
+    font-size: 1.5em;
+    color: #333;
+}
+
+#menu-menu-1 .mn-exploitation a {
+    padding-top: 30px;
     background-image: url(../img/mn_exploit_off.jpg);
 }
 
-.mn-exploitation.current_page_item a {
+#menu-menu-1 .mn-exploitation a:hover,
+#menu-menu-1 .mn-exploitation.current_page_item a {
     background-image: url(../img/mn_exploit_on.jpg);
 }
 
-.mn-come a {
+#menu-menu-1 .mn-come a {
+    padding-top: 30px;
     background-image: url(../img/mn_come_off.jpg);
 }
 
-.mn-come.current_page_item a {
+#menu-menu-1 .mn-come a:hover,
+#menu-menu-1 .mn-come.current_page_item a {
     background-image: url(../img/mn_come_on.jpg);
+}
+
+#menu-menu-1 .mn-champagne a {
+    padding-top: 30px;
+    background-image: url(../img/mn_champagne_off.jpg);
+}
+
+#menu-menu-1 .mn-champagne a:hover,
+#menu-menu-1 .mn-champagne.current_page_item a {
+    background-image: url(../img/mn_champagne_on.jpg);
+}
+
+#menu-menu-1 .mn-actu a {
+    background-image: url(../img/mn_actu_off.jpg);
+}
+
+#menu-menu-1 .mn-actu a:hover,
+#menu-menu-1 .mn-actu.current_page_item a {
+    background-image: url(../img/mn_actu_on.jpg);
+}
+
+#menu-menu-1 .mn-contact a {
+    background-image: url(../img/mn_contact_off.jpg);
+}
+
+#menu-menu-1 .mn-contact a:hover,
+#menu-menu-1 .mn-contact.current_page_item a {
+    background-image: url(../img/mn_contact_on.jpg);
 }
 
 @media screen and (max-width: 1200px) {
@@ -80,6 +124,15 @@ a.navbar-brand {
         padding-bottom: 30px;
         padding-left: 5px;
         height: 80px;
+        font-size: 1.2em;
+    }
+    #menu-menu-1 li a:hover {
+        font-size: 1.3em;
+    }
+    #menu-menu-1 .mn-exploitation a,
+    #menu-menu-1 .mn-come a,
+    #menu-menu-1 .mn-champagne a {
+        padding-top: 20px;
     }
 }
 
@@ -93,8 +146,17 @@ a.navbar-brand {
     }
     #menu-menu-1 li a {
         width: 90px;
-        padding: 5px;
+        padding-top: 20px;
         height: 60px;
+        font-size: 0.9em;
+    }
+    #menu-menu-1 li a:hover {
+        font-size: 0.9em;
+    }
+    #menu-menu-1 .mn-exploitation a,
+    #menu-menu-1 .mn-come a,
+    #menu-menu-1 .mn-champagne a {
+        padding-top: 10px;
     }
 }
 

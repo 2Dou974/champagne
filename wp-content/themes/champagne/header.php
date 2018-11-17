@@ -8,8 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!– Ajout d'une nouvelle feuille de style qui sera spécifique à notre thème –>
-    <link href="<?php bloginfo('template_directory');?>/css/blog.css" rel="stylesheet">
     <?php wp_head();?>
 </head>
 
