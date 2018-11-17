@@ -30,3 +30,7 @@ function champagne_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'champagne_widgets_init' );
+
+/* Personnaliser le texte "Mettre une image à la Une" dans l'administration */
+
+add_theme_support( 'post-thumbnails' );

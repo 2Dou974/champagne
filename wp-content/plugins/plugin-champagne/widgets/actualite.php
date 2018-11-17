@@ -65,8 +65,7 @@ class champagne_actualite extends WP_Widget
     function widget( $args, $instance ) {
        
         ?>
-        <div id="activite">
-        <div class="container">
+        <div id="actualite">
         <?php
          if ( ! empty( $instance['title'] ) ) {
             echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
@@ -81,8 +80,13 @@ class champagne_actualite extends WP_Widget
             <?php
         }
         // echo  $instance['Cat'];
-        
-            $posts = get_posts( array("category"=>$instance['Cat']));
+        ?>
+        <div id="actualite" class="row equal">
+           
+        <?php     $posts = get_posts( array(
+            'numberposts' => 4,
+            "category"=>$instance['Cat']
+          ) );
 
             foreach($posts as $post)
             {
@@ -92,21 +96,31 @@ class champagne_actualite extends WP_Widget
 
        
         ?>
-        </div>
+          </div>
         </div>
 		<?php 
     }
 
     function actDispay($post)
     {
-        $image = get_the_post_thumbnail( $post->ID, $size );
+         $imageUrl=get_the_post_thumbnail_url( $post->ID);
+       
         ?>
-        <div class="actualityHp">
-            <a href="<?php echo esc_url( get_the_permalink($post->ID) ); ?>"> -->
-                   
-                 <?php echo $image ?>
-                 <?php echo $post->post_title; ?>
+        <div class="actualityHp col-md-3 col-sm-6 col-xs-12">
+            <div class="contentActu">
+            <a href="<?php echo esc_url( get_the_permalink($post->ID) ); ?>">
+        <div>    <?php echo $post->post_title; ?></div>
+            <?php 
+                if($imageUrl)
+                {
+                    ?>
+                <img src=" <?php echo $imageUrl?>" alt="<?php echo $post->post_title ?>">   
+           
+                <?php
+                }
+                ?>
                   </a>    
+                  </div>
             </div>
         
     <?php

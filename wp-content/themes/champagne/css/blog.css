@@ -9,6 +9,13 @@
     color: #fff;
 }
 
+@media (min-width: 768px) {
+    .row.equal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 
 /*common*/
 
@@ -251,4 +258,24 @@ a.navbar-brand {
         margin: 0;
         z-index: 1;
     }
+}
+
+
+/*actualityHp*/
+
+.actualityHp .contentActu {
+    background-color: #eee;
+    margin: 0 5px;
+    padding: 5px;
+    height: 100%;
+}
+
+.actualityHp .contentActu img {
+    width: 100%
+}
+
+.actualityHp .contentActu a div {
+    text-align: center;
+    color: #444;
+    font-size: 1.2em;
 }
