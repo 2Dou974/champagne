@@ -9,11 +9,24 @@
     color: #fff;
 }
 
+.flex-md-row {
+    flex-direction: row !important;
+}
+
 @media (min-width: 768px) {
     .row.equal {
         display: flex;
         flex-wrap: wrap;
     }
+}
+
+.blog-footer .address {
+    background-color: #eee;
+    text-align: center;
+}
+
+.blog-footer {
+    margin-top: 3em;
 }
 
 
@@ -278,4 +291,30 @@ a.navbar-brand {
     text-align: center;
     color: #444;
     font-size: 1.2em;
+}
+
+
+/* exploitation */
+
+.widget-exploitation .image {
+    margin-bottom: 15px;
+}
+
+
+/* home */
+
+.home-art img {
+    max-width: 250px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .home-art img {
+        display: none;
+    }
+}
+
+.home-art,
+.card {
+    display: flex;
 }

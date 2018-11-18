@@ -1,5 +1,6 @@
+</div>
 <footer class="blog-footer ">
-        <p></p>
+        <div class="address"> 9 Rue de la Liberté, 51120 Reuves, France</div>
        <?php 
        get_template_part( 'modal/legalAge' );
        ?>

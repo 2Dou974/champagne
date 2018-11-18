@@ -2,7 +2,7 @@
 <?php get_header();?>
 
 <div class="row ">
-<?php dynamic_sidebar('sidebar-home');?>
+<?php dynamic_sidebar('Homepage');?>
 </div>
 </div>
 <!– /.container –>
