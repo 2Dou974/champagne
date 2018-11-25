@@ -9,7 +9,18 @@ while ( have_posts() ) : the_post();
  * use this in a child theme, then include a file called content-___.php
  * (where ___ is the post format) and that will be used instead.
  */
-get_template_part( 'contentActu', get_post_format() );
+
+//category
+$catId=get_the_category()[0]->term_id;
+switch($catId)
+{
+    case 4:case 5:
+    get_template_part( 'contentChampagne', get_post_format() );
+    break;
+    default:
+    get_template_part( 'contentActu', get_post_format() );
+}
+
 
 
 

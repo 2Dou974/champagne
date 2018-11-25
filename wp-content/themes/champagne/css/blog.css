@@ -17,6 +17,11 @@
     margin-bottom: 2em;
 }
 
+.menu-bottle .list-group .list-group-item.active {
+    background-image: none;
+    background-color: transparent;
+}
+
 @media (min-width: 768px) {
     .row.equal {
         display: flex;
@@ -338,4 +343,29 @@ a.navbar-brand {
 
 .single .body-actu {
     margin: 1em;
+}
+
+.champagne h2 {
+    text-align: center
+}
+
+.champagne .terroir,
+.champagne .intemporels {
+    font-size: 1.2em;
+}
+
+.champagne .bottles {
+    text-align: center
+}
+
+.champagne .bottles img {
+    width: 20%
+}
+
+.bottle-desc {
+    text-align: center
+}
+
+.menu-bottle .list-group-item.title {
+    font-size: 1.5em;
 }

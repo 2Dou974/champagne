@@ -28,9 +28,9 @@
 <!– /.row –>
 <div class="navigation row" >
 <div class="col-md-6 prev">
-<?php previous_post_link( '%link','<< %title');?>
+<?php previous_post_link( '%link','<< %title',true);?>
 </div>
 <div class="col-md-6 next">
-<?php next_post_link('%link','%title >>');?>
+<?php next_post_link('%link','%title >>',true);?>
 </div>
 </div>

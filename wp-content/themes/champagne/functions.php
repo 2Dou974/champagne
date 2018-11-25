@@ -51,3 +51,29 @@ add_action( 'widgets_init', 'champagne_widgets_init' );
 /* Personnaliser le texte "Mettre une image à la Une" dans l'administration */
 
 add_theme_support( 'post-thumbnails' );
+
+function only_actu_category( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'cat', '3' );
+    }
+}
+add_action( 'pre_get_posts', 'only_actu_category' );
+
+
+add_action('edit_category_form_fields', 'add_form_fields_example', 10, 2);
+
+function add_form_fields_example($term){
+    ?>
+    <tr valign="top">
+        <th scope="row">Description</th>
+        <td>
+            <?php wp_editor(html_entity_decode($term->description), 'description', array('media_buttons' => false)); ?>
+            <script>
+                jQuery(window).ready(function(){
+                    jQuery('label[for=description]').parent().parent().remove();
+                });
+            </script>
+        </td>
+    </tr>
+    <?php
+} 
