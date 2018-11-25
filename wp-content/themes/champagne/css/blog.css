@@ -13,6 +13,10 @@
     flex-direction: row !important;
 }
 
+.mb-2 {
+    margin-bottom: 2em;
+}
+
 @media (min-width: 768px) {
     .row.equal {
         display: flex;
@@ -317,4 +321,21 @@ a.navbar-brand {
 .home-art,
 .card {
     display: flex;
+}
+
+.single .actu-img {
+    text-align: center;
+}
+
+.single .actu-img img {
+    width: 100%;
+    max-width: 640px;
+}
+
+.single .navigation .next {
+    text-align: right;
+}
+
+.single .body-actu {
+    margin: 1em;
 }

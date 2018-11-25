@@ -1,4 +1,5 @@
 <?php get_header();?>
+<h1>Nos actualités</h1>
 <div class="row mb-2 equal">
         <?php
 if (have_posts()) {
