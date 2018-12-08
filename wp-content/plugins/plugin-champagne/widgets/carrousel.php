@@ -19,11 +19,13 @@ class champagne_carrousel extends WP_Widget
     {
         $title = !empty($instance['title']) ? $instance['title'] : esc_html__('Title', 'text_domain');
         $intro = !empty($instance['intro']) ? $instance['intro'] : esc_html__('Intro', 'text_domain');
+        $logo = (!empty($instance['logo'])) ? $instance['logo'] : '';
         $img1 = (!empty($instance['img1'])) ? $instance['img1'] : '';
         $img2 = (!empty($instance['img2'])) ? $instance['img2'] : '';
         $img3 = (!empty($instance['img3'])) ? $instance['img3'] : '';
         $img4 = (!empty($instance['img4'])) ? $instance['img4'] : '';
         $img5 = (!empty($instance['img5'])) ? $instance['img5'] : '';
+        $logo_field_id = $this->get_field_id('logo');
         $img_field_id_1 = $this->get_field_id('img1');
         $img_field_id_2 = $this->get_field_id('img2');
         $img_field_id_3 = $this->get_field_id('img3');
@@ -53,6 +55,17 @@ class champagne_carrousel extends WP_Widget
             name="<?php echo esc_attr($this->get_field_name('intro')); ?>"
             type="text"
             value="<?php echo esc_attr($intro); ?>">
+        </p>
+        <p>
+            <label for="<?php echo $logo_field_id ?>">Logo :</label><br/>
+            <input class="upload_image" id="<?php echo $logo_field_id ?>" type="hidden" name="<?php echo $this->get_field_name('logo') ?>" value="<?php echo $img1 ?>" />
+            <input class="upload_image_button" id="<?php echo $logo_field_id ?>_button" type="button" value="Charger une image" data-field-id="<?php echo $logo_field_id ?>" />
+            <div id="<?php echo $logo_field_id ?>_img" class="upload_image_wrapper">
+                <?php if (!empty($logo)): ?>
+                    <img width="150" src="<?php echo $logo ?>" />
+                    <a href="#" class="upload_image_delete" data-logo_field_id-id="<?php echo $logo_field_id ?>">Supprimer l'image</a>
+                <?php endif?>
+            </div>
         </p>
         <p>
             <label for="<?php echo $img_field_id_1 ?>">Image 1 :</label><br/>
@@ -122,6 +135,7 @@ class champagne_carrousel extends WP_Widget
         $instance = array();
         $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
         $instance['intro'] = (!empty($new_instance['intro'])) ? strip_tags($new_instance['intro']) : '';
+        $instance['logo'] = (!empty($new_instance['logo'])) ? strip_tags($new_instance['logo']) : '';
         $instance['img1'] = (!empty($new_instance['img1'])) ? strip_tags($new_instance['img1']) : '';
         $instance['img2'] = (!empty($new_instance['img2'])) ? strip_tags($new_instance['img2']) : '';
         $instance['img3'] = (!empty($new_instance['img3'])) ? strip_tags($new_instance['img3']) : '';
@@ -137,10 +151,20 @@ class champagne_carrousel extends WP_Widget
 
         <div class="champagne-carrousel">
         <div class="inner-text">
-        <h2><?php echo $instance['title'] ?></h2>
-        <p>
-        <?php echo $instance['intro'] ?>
-        </p>
+        <?php 
+        if ($instance['title'] != '')
+        {
+            echo "<h2>".$instance['title']."</h2>";
+        }
+        if ($instance['intro'] != '')
+        {
+        echo " <p>".$instance['intro']. "</p>";
+        }
+        if ($instance['logo'] != '')
+        {
+        echo "<img src='" . esc_url($instance['logo']) . "'>";
+        }
+        ?>
         </div>
         <?php
 $nb = 0;
