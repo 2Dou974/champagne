@@ -12,7 +12,18 @@
 </head>
 
 <body>
-    <div class="header">
+<?php 
+     if (is_front_page()){
+    ?>
+    <div class="header frontpage">
+    <?php 
+     }else{
+    ?>
+  <div class="header">
+    <?php 
+     }
+    ?>
+    
         <nav id="site-navigation" class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -31,7 +42,7 @@
     //'theme_location' => 'primary',
     'container' => 'ul',
     'container_class' => '',
-    'menu_class' => 'nav navbar-nav',
+    'menu_class' => 'nav navbar-nav navbar-right',
     'menu_id' => '',
     'echo' => true,
     'fallback_cb' => 'wp_page_menu',
@@ -48,4 +59,14 @@
         </nav><!-- #site-navigation -->
         </div>
     </div>
-    <div class="container ">
+    <?php 
+     if (is_front_page()){
+    ?>
+      <div class="container-fluid">
+    <?php 
+     }else{
+    ?>
+    <div class="container">
+    <?php 
+     }
+    ?>

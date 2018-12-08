@@ -8,6 +8,8 @@ function wpdocs_theme_name_scripts()
     wp_enqueue_style("bootstrap-style");
     wp_register_style("bootstrap-style-theme", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css", array(), true);
     wp_enqueue_style("bootstrap-style-theme");
+    wp_register_style("family-raleway", "https://fonts.googleapis.com/css?family=Raleway:400,700", array(), true);
+    wp_enqueue_style("family-raleway");
 }
 add_action("wp_enqueue_scripts", "wpdocs_theme_name_scripts");
 

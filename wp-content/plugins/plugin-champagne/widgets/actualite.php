@@ -65,7 +65,7 @@ class champagne_actualite extends WP_Widget
     function widget( $args, $instance ) {
        
         ?>
-        <div id="actualite">
+        <div id="actualite" class="container">
         <?php
          if ( ! empty( $instance['title'] ) ) {
             echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];

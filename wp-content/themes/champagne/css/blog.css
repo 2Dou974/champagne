@@ -1,3 +1,7 @@
+body {
+    font-family: Raleway !important
+}
+
 #navigation-principale li {
     position: relative;
     display: inline-block;
@@ -53,6 +57,20 @@
 
 /* Menu */
 
+.header.frontpage {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 800;
+    display: none;
+}
+
+.header .navbar-brand {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: block;
+    height: inherit;
+}
+
 .header #site-navigation {
     background-image: none;
     box-shadow: none;
@@ -66,11 +84,7 @@ a.navbar-brand {
 
 .header .container,
 .header .navbar-brand img {
-    height: 150px;
-}
-
-#menu-menu-1 li {
-    margin-top: 25px;
+    height: 100px;
 }
 
 #menu-menu-1 li a {
@@ -255,9 +269,12 @@ a.navbar-brand {
 /*caroussel*/
 
 .champagne-carrousel {
-    max-width: 1024px;
     margin: 0 auto;
     position: relative;
+}
+
+.champagne-carrousel .carousel-inner img {
+    width: 100%
 }
 
 .champagne-carrousel .inner-text {
