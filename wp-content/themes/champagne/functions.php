@@ -1,4 +1,5 @@
 <?php
+require get_template_directory() . '/metas/functions.php';
 /*** Ajouter un script ou un fichier CSS de la bonne façon */
 function wpdocs_theme_name_scripts()
 {
