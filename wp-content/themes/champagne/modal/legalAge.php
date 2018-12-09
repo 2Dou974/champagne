@@ -12,7 +12,7 @@
                 <!-- btn ok -->
                 <button type="button" class="btn btn-silver">Oui, j'ai l'âge légal</button>
                 <!-- validation cookies -->
-                <p>En cliquant sur "Oui" j’accepte les <a href="/legalMention?oag=1" target='_blank'>Conditions Générales d’Utilisation</a> et déclare avoir lu la <a href="/cookie?oag=1" target='_blank'>Charte données personnelles & cookies</a>.</p>
+                <p>En cliquant sur "Oui" j’accepte les <a href="/legalMention/?oag=1" target='_blank'>Conditions Générales d’Utilisation</a> et déclare avoir lu la <a href="/cookie/?oag=1" target='_blank'>Charte données personnelles & cookies</a>.</p>
             </div>
         </div>
     </div>
