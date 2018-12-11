@@ -66,7 +66,7 @@
         if ($imageUrl) {
           ?>
             <div class="bottle-img"> 
-              <div class="bottle-content hidden-xs">
+              <div class="bottle-content">
                 <div class="bottle-part">
                 <?php
                   $text=get_post_meta(get_post()->ID,"arrow1",true);

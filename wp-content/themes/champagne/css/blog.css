@@ -450,6 +450,13 @@ a.navbar-brand {
     padding: 3% 23%;
 }
 
+@media screen and (max-width: 768px) {
+    .bottle-part .tag {
+        font-size: 1em;
+        padding: 3% 38% 0 10%;
+    }
+}
+
 .tag-right {
     text-align: right;
 }
