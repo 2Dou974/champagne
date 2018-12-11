@@ -92,6 +92,10 @@ a.navbar-brand {
     height: 100px;
 }
 
+.header .navbar-toggle {
+    background-color: #333;
+}
+
 #menu-menu-1 li a {
     width: 150px;
     height: 100px;
@@ -216,14 +220,10 @@ a.navbar-brand {
     .navbar-header {
         height: 100px;
     }
-    ul#menu-menu-1 {
-        background-color: #f8f8f8;
-    }
-    ul#menu-menu-1 li a {
-        background-image: none
-    }
-    ul#menu-menu-1 li.current_page_item a,
-    ul#menu-menu-1 li a:hover {
+    ul#menu-menu-1 li.menu-item a,
+    ul#menu-menu-1 li.menu-item.current_page_item a,
+    ul#menu-menu-1 li.menu-item a:hover {
+        background-image: none;
         background-color: #e7e7e7;
     }
     .header .container,
