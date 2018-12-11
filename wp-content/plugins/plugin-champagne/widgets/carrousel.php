@@ -171,7 +171,7 @@ $nb = 0;
         if ($instance['img5'] != '') {$nb = 5;} elseif ($instance['img4'] != '') {$nb = 4;} elseif ($instance['img3'] != '') {$nb = 3;} elseif ($instance['img2'] != '') {$nb = 2;} elseif ($instance['img1'] != '') {$nb = 1;}
         if ($nb > 0) {
             ?>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <?php
