@@ -36,6 +36,7 @@
         echo "<ul class='list-group'>";
         echo "<li class='list-group-item title ";
         if($currentcat==4){
+          $backStyle="liverty";
         echo "active";}
         
         echo "' data-id=4 >"; 
@@ -45,6 +46,7 @@
         detail(4,$currentcat);
         echo "<li class='list-group-item title ";
         if($currentcat==5){
+          $backStyle="vigne";
         echo "active";}
         
         echo "'' data-id=5 >"; 
@@ -56,6 +58,7 @@
     </div>
   </div>
   <div class="col-md-8 bottle-desc">
+        <div class="bkgImg <?php echo  $backStyle; ?>">&nbsp;</div>
         <?php $imageUrl = get_the_post_thumbnail_url($post->ID);?>       
            
         <h1 class="mb-0">

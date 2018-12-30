@@ -2,6 +2,18 @@ body {
     font-family: Raleway !important
 }
 
+.parallax {
+    /* The image used */
+    /* background-image: url("img_parallax.jpg"); */
+    /* Set a specific height */
+    /* height: 500px; */
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #navigation-principale li {
     position: relative;
     display: inline-block;
@@ -61,6 +73,17 @@ body {
 
 
 /* Menu */
+
+.header {
+    position: fixed;
+    z-index: 800;
+    left: 0;
+    right: 0;
+}
+
+.chp-body.container {
+    padding-top: 150px;
+}
 
 .header.frontpage {
     position: fixed;
@@ -289,8 +312,8 @@ a.navbar-brand {
     left: 50%;
     /* width: 50%; */
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 1em 0;
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    /* border-radius: 1em 0; */
     padding: 15px;
 }
 
@@ -366,9 +389,27 @@ a.navbar-brand {
     text-align: center
 }
 
+.champagne .intemporels {
+    background-image: url(../img/fond_liverty.jpg);
+}
+
+.champagne .terroir {
+    background-image: url(../img/fond_vigne.jpg);
+}
+
 .champagne .terroir,
 .champagne .intemporels {
     font-size: 1.2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.champagne .content-cat-desc {
+    margin-top: 1em;
+}
+
+.champagne .content-cat-desc p {
+    text-align: center;
 }
 
 .champagne .bottles {
@@ -394,7 +435,24 @@ a.navbar-brand {
 }
 
 .bottle-desc {
-    text-align: center
+    text-align: center;
+}
+
+.bottle-desc .bkgImg.liverty {
+    background-image: url(../img/fond_liverty.jpg);
+}
+
+.bottle-desc .bkgImg.vigne {
+    background-image: url(../img/fond_vigne.jpg);
+}
+
+.bottle-desc .bkgImg {
+    background-position: top right;
+    background-repeat: no-repeat;
+    width: 750px;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
 }
 
 .bottle-desc .bottle-img {

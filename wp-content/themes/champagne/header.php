@@ -62,11 +62,11 @@
     <?php 
      if (is_front_page()){
     ?>
-      <div class="container-fluid">
+      <div class="chp-body container-fluid">
     <?php 
      }else{
     ?>
-    <div class="container">
+    <div class="chp-body container">
     <?php 
      }
     ?>

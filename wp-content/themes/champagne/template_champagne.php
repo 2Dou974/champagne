@@ -43,16 +43,24 @@ the_content();
     echo "<h2>".get_the_category_by_ID(4)."</h2>";
     // btle
     displayBtl(4);
+    ?>
+    <div class="content-cat-desc">
+    <?php
     echo category_description(4);
     ?> 
+    </div>
     </div>
     <div class="col-md-6 terroir ">
     <?php
      echo "<h2>".get_the_category_by_ID(5)."</h2>";
        // btle
     displayBtl(5);
+    ?>
+    <div class="content-cat-desc">
+    <?php
     echo category_description(5);
     ?> 
+    </div>
     </div>
 </div>
 <?php get_footer(); ?>

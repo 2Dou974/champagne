@@ -63,7 +63,7 @@ function only_actu_category( $query ) {
 add_action( 'pre_get_posts', 'only_actu_category' );
 
 
-add_action('edit_category_form_fields', 'add_form_fields_example', 10, 2);
+ add_action('edit_category_form_fields', 'add_form_fields_example', 10, 2);
 
 function add_form_fields_example($term){
     ?>
