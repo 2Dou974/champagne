@@ -14,9 +14,10 @@
                 if($imageUrl)
                 {
                     ?>               
-                <img class="card-img-right"  alt="<?php the_title();?>" 
+                <div class="card-img-right" ><img  alt="<?php the_title();?>" 
                 src="<?php echo $imageUrl?>"
                  data-holder-rendered="true">
+                 </div>
                 <?php
                 }
                 ?>
