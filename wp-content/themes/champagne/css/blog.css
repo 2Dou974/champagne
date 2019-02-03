@@ -38,6 +38,10 @@ body {
     bottom: 0;
 }
 
+.menu-bottle .list-group .list-group-item {
+    border: none;
+}
+
 .menu-bottle .list-group .list-group-item.active {
     background-image: none;
     background-color: transparent;
@@ -82,7 +86,7 @@ body {
 }
 
 .chp-body.container {
-    padding-top: 150px;
+    padding-top: 100px;
 }
 
 .header.frontpage {
@@ -100,10 +104,11 @@ body {
 }
 
 .header #site-navigation {
-    background-image: none;
+    /* background-image: none; */
     box-shadow: none;
     background-color: transparent;
     border-color: transparent;
+    border: none;
 }
 
 a.navbar-brand {
@@ -112,7 +117,8 @@ a.navbar-brand {
 
 .header .container,
 .header .navbar-brand img {
-    height: 100px;
+    height: 65px;
+    margin-top: 5px;
 }
 
 .header .navbar-toggle {
@@ -121,76 +127,22 @@ a.navbar-brand {
 
 #menu-menu-1 li a {
     width: 150px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0 9px;
+    height: 56px;
+    margin: 10px 9px;
     text-shadow: 1px 1px 2px rgba(48, 48, 48, .25);
-    font-weight: bold;
-    color: #444;
+    color: #555;
     font-size: 1.3em;
     text-align: center;
-    padding-top: 40px;
-    background: rgba(58, 57, 63, 0.6);
+    background-color: rgba(58, 57, 63, 0.05);
+    border: rgba(58, 87, 63, 0.1) 1px solid;
+    padding: 5px 15px;
 }
 
 #menu-menu-1 li a:hover {
-    font-size: 1.5em;
-    color: #333;
-}
-
-#menu-menu-1 .mn-exploitation a {
-    padding-top: 30px;
-    background-image: url(../img/mn_exploit_off.jpg);
-}
-
-#menu-menu-1 .mn-exploitation a:hover,
-#menu-menu-1 .mn-exploitation.current_page_item a {
-    background-image: url(../img/mn_exploit_on.jpg);
-}
-
-#menu-menu-1 .mn-come a {
-    padding-top: 30px;
-    background-image: url(../img/mn_come_off.jpg);
-}
-
-#menu-menu-1 .mn-come a:hover,
-#menu-menu-1 .mn-come.current_page_item a {
-    background-image: url(../img/mn_come_on.jpg);
-}
-
-#menu-menu-1 .mn-champagne a {
-    padding-top: 30px;
-    background-image: url(../img/mn_champagne_off.jpg);
-}
-
-#menu-menu-1 .mn-champagne a:hover,
-#menu-menu-1 .mn-champagne.current_page_item a {
-    background-image: url(../img/mn_champagne_on.jpg);
-}
-
-#menu-menu-1 .mn-actu a {
-    background-image: url(../img/mn_actu_off.jpg);
-}
-
-#menu-menu-1 .mn-actu a:hover,
-#menu-menu-1 .mn-actu.current_page_item a {
-    background-image: url(../img/mn_actu_on.jpg);
-}
-
-#menu-menu-1 .mn-contact a {
-    background-image: url(../img/mn_contact_off.jpg);
-}
-
-#menu-menu-1 .mn-contact a:hover,
-#menu-menu-1 .mn-contact.current_page_item a {
-    background-image: url(../img/mn_contact_on.jpg);
+    background-color: rgba(58, 57, 63, 0.2);
 }
 
 @media screen and (max-width: 1200px) {
-    #menu-menu-1 li {
-        margin-top: 35px;
-    }
     #menu-menu-1 li a {
         width: 120px;
         padding: 30px 5px;
@@ -212,13 +164,6 @@ a.navbar-brand {
 }
 
 @media screen and (max-width: 992px) {
-    .header .container,
-    .header .navbar-brand img {
-        height: 90px;
-    }
-    #menu-menu-1 li {
-        margin-top: 15px;
-    }
     #menu-menu-1 li a {
         width: 90px;
         padding-top: 20px;
@@ -236,22 +181,18 @@ a.navbar-brand {
 }
 
 @media screen and (max-width: 768px) {
+    .navbar-default .navbar-collapse {
+        background-color: rgba(180, 180, 180, 0.8);
+    }
     .navbar-collapse {
         position: relative;
         z-index: 200;
-    }
-    .navbar-header {
-        height: 100px;
     }
     ul#menu-menu-1 li.menu-item a,
     ul#menu-menu-1 li.menu-item.current_page_item a,
     ul#menu-menu-1 li.menu-item a:hover {
         background-image: none;
         background-color: #e7e7e7;
-    }
-    .header .container,
-    .header .navbar-brand img {
-        height: 95px;
     }
     #menu-menu-1 li {
         margin-top: 0;
@@ -418,7 +359,7 @@ a.navbar-brand {
 }
 
 .champagne .terroir {
-    background-image: url(../img/fond_vigne.jpg);
+    background-image: url(../img/fond_vigne2.jpg);
 }
 
 .champagne .terroir,
@@ -528,7 +469,7 @@ a.navbar-brand {
 
 .bottle-part .tag {
     font-size: 1.5em;
-    color: #376093;
+    color: #D4AF37;
     padding: 3% 23%;
 }
 

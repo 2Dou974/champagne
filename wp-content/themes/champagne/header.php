@@ -12,17 +12,8 @@
 </head>
 
 <body>
-<?php 
-     if (is_front_page()){
-    ?>
-    <div class="header frontpage">
-    <?php 
-     }else{
-    ?>
   <div class="header">
-    <?php 
-     }
-    ?>
+
     
         <nav id="site-navigation" class="navbar navbar-default" role="navigation">
             <div class="container">
@@ -42,7 +33,7 @@
     //'theme_location' => 'primary',
     'container' => 'ul',
     'container_class' => '',
-    'menu_class' => 'nav navbar-nav navbar-right',
+    'menu_class' => 'nav navbar-nav',
     'menu_id' => '',
     'echo' => true,
     'fallback_cb' => 'wp_page_menu',

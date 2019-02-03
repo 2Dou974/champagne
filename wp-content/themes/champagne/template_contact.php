@@ -19,13 +19,6 @@
 <li>Du lundi au vendredi : de 9 h à 18 h</li>
 <li>Le samedi et le dimanche : de 10 h à 17 h</li>
 </ul>
-<p>Plusieurs formules possibles:</p>
-<ul>
-<li>Dégustations 3 cuvées</li>
-<li>Dégustations 5 cuvées</li>
-<li>Dégustation + visite vignes</li>
-<li>Dégustation + visite coopérative</li>
-</ul>
 <p>N’hésitez pas à nous contacter pour plus de renseignements.</p>
 
     </div> <!– /.col –>
