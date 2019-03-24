@@ -8,7 +8,8 @@
     <div class="col-sm-5">
 
         <table>
-        <tr><td style="vertical-align: top;padding-right: 15px;">Nos coordonnées : </td><td> 9 Rue de la Liberté<br> 51120 Reuves<br> France</<td>
+        <tr><td style="vertical-align: top;padding-right: 15px;">Nos coordonnées : </td><td> 9 Rue de la Liberté<br> 51120 Reuves<br> France<br> 09 77 33 23 47
+<br> 06 87 09 41 14</td>
         </tr>
         </table>
 
