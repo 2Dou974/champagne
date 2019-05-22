@@ -162,7 +162,7 @@ class champagne_carrousel extends WP_Widget
         }
         if ($instance['logo'] != '')
         {
-        echo "<img src='" . esc_url($instance['logo']) . "'>";
+        echo "<img src='" . esc_url($instance['logo']) . "' title='Champagne Valérie et Gaël Dupont' alt='Champagne Valérie et Gaël Dupont'>";
         }
         ?>
         </div>
@@ -190,9 +190,9 @@ for ($i = 1; $i <= $nb; $i++) {
                 <?php
 for ($i = 1; $i <= $nb; $i++) {
                 if ($i == 1) {
-                    echo "<div class='item active'><img src='" . esc_url($instance['img1']) . "'></div>";
+                    echo "<div class='item active'><img src='" . esc_url($instance['img1']) . "' alt='carrousel champagne'></div>";
                 } else {
-                    echo "<div class='item'><img src='" . esc_url($instance[('img' . $i)]) . "'></div>";
+                    echo "<div class='item'><img src='" . esc_url($instance[('img' . $i)]) . "' alt='carrousel champagne'></div>";
                 }
             }
             ?>

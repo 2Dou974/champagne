@@ -4,7 +4,7 @@
             <div class="modal-body">
                 <!-- logo -->
                 <div class="roundedImage">
-                    <img src="<?php bloginfo('template_directory');?>/img/logo_150.png" title="<?php bloginfo('name');?>" />
+                    <img src="<?php bloginfo('template_directory');?>/img/logo_150.png" title="<?php bloginfo('name');?>" alt='Champagne Valérie et Gaël Dupont - Logo' />
                 </div>
                 <!-- text age -->
                 <p>Pour visiter notre site, vous devez être en âge de consommer et/ou d'acheter de l'alcool selon la législation en vigueur dans votre localisation de résidence.<br/>

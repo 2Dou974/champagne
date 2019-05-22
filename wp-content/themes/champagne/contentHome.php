@@ -1,6 +1,6 @@
 
  <?php $imageUrl=get_the_post_thumbnail_url( $post->ID); ?>
-<div class="col-md-6 home-art">
+<div class="col-md-12 home-art">
           <div class="card flex-md-row">
             <div class="card-body">             
               <h3 class="mb-0">

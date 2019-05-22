@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv = "content-language" content = "fr">
     <?php wp_head();?>
 </head>
 
@@ -23,7 +23,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/">
-                    <img src="<?php bloginfo('template_directory');?>/img/logo.png" title="<?php bloginfo('name');?>" /></a>
+                    <img src="<?php bloginfo('template_directory');?>/img/logo.png" title="<?php bloginfo('name');?>" alt="Champagne Valérie et Gaël Dupont" /></a>
                 </div>
             <!--<a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', '_s');?></a>-->
            <div class="collapse navbar-collapse" id="main-navbar-collapse">
