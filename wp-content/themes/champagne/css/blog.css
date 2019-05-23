@@ -333,9 +333,16 @@ a.navbar-brand {
     }
 }
 
-.home-art,
-.card {
-    display: flex;
+.actuCard {
+    text-align: center
+}
+
+.actuCard .card-text {
+    text-align: left
+}
+
+.actuCard .card-img-top {
+    height: 150px;
 }
 
 .single .actu-img {

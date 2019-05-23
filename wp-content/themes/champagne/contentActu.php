@@ -8,13 +8,13 @@
         <div class="mb-1 text-muted">
           <?php the_date();?>
         </div>
-        <?php
-        if ($imageUrl) {
+        <!-- <?php
+        // if ($imageUrl) {
           ?>
             <div class="actu-img"> <img alt="<?php the_title();?>" src="<?php echo $imageUrl ?>" data-holder-rendered="true"></div>
             <?php
-        }
-        ?>
+        // }
+        ?> -->
         <div class="body-actu">
             <?php the_content();?>
       </div>
