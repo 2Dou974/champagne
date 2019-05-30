@@ -1,6 +1,6 @@
 </div>
 <footer class="blog-footer ">
-        <div class="address"> 9 Rue de la Liberté, 51120 Reuves, France</div>
+        <div class="address">Champagne Valérie et Gaël Dupont<br/>9 Rue de la Liberté, 51120 Reuves, France</div>
        <?php 
        get_template_part( 'modal/legalAge' );
        ?>
