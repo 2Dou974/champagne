@@ -82,6 +82,10 @@ class DashboardWidget {
 		if ( ! empty( $this->settings['allow_entries_count_lite'] ) ) {
 			\add_action( 'wpforms_process_entry_save', array( $this, 'update_entry_count' ), 10, 3 );
 		}
+
+		\add_action( 'wpforms_create_form', __CLASS__ . '::clear_widget_cache' );
+		\add_action( 'wpforms_save_form', __CLASS__ . '::clear_widget_cache' );
+		\add_action( 'wpforms_delete_form', __CLASS__ . '::clear_widget_cache' );
 	}
 
 	/**
@@ -209,14 +213,14 @@ class DashboardWidget {
 
 		?>
 		<div class="wpforms-dash-widget-block wpforms-dash-widget-block-no-forms">
-			<img class="wpforms-dash-widget-block-sullie-logo" src="<?php echo \esc_url( WPFORMS_PLUGIN_URL . 'assets/images/sullie.png' ); ?>" alt="<?php \esc_attr_e( 'Sullie the WPForms mascot', 'wpforms' ); ?>">
-			<h2><?php \esc_html_e( 'Create Your First Form to Start Collecting Leads', 'wpforms' ); ?></h2>
-			<p><?php \esc_html_e( 'You can use WPForms to build contact forms, surveys, payment forms, and more with just a few clicks.', 'wpforms' ); ?></p>
+			<img class="wpforms-dash-widget-block-sullie-logo" src="<?php echo \esc_url( WPFORMS_PLUGIN_URL . 'assets/images/sullie.png' ); ?>" alt="<?php \esc_attr_e( 'Sullie the WPForms mascot', 'wpforms-lite' ); ?>">
+			<h2><?php \esc_html_e( 'Create Your First Form to Start Collecting Leads', 'wpforms-lite' ); ?></h2>
+			<p><?php \esc_html_e( 'You can use WPForms to build contact forms, surveys, payment forms, and more with just a few clicks.', 'wpforms-lite' ); ?></p>
 			<a href="<?php echo \esc_url( $create_form_url ); ?>" class="button button-primary">
-				<?php \esc_html_e( 'Create Your Form', 'wpforms' ); ?>
+				<?php \esc_html_e( 'Create Your Form', 'wpforms-lite' ); ?>
 			</a>
 			<a href="<?php echo \esc_url( $learn_more_url ); ?>" class="button" target="_blank" rel="noopener noreferrer">
-				<?php \esc_html_e( 'Learn More', 'wpforms' ); ?>
+				<?php \esc_html_e( 'Learn More', 'wpforms-lite' ); ?>
 			</a>
 		</div>
 		<?php
@@ -483,5 +487,15 @@ class DashboardWidget {
 
 		$count = \absint( \get_post_meta( $form_id, 'wpforms_entries_count', true ) );
 		\update_post_meta( $form_id, 'wpforms_entries_count', $count + 1 );
+	}
+
+	/**
+	 * Clear dashboard widget cached data.
+	 *
+	 * @since 1.5.2
+	 */
+	public static function clear_widget_cache() {
+
+		delete_transient( 'wpforms_dash_widget_lite_entries_by_form' );
 	}
 }

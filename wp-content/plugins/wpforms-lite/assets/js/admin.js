@@ -573,8 +573,15 @@
 					return;
 				}
 
-				data.wpforms_new_entries_entry_id = $entriesList.find( '#wpforms-entries-table' ).data( 'last-entry-id' );
-				data.wpforms_new_entries_form_id = $entriesList.find( 'input[name=form_id]' ).val();
+				var last_entry_id = $entriesList.find( '#wpforms-entries-table' ).data( 'last-entry-id' );
+
+				// When entries list is filtered, there is no data param at all.
+				if ( typeof last_entry_id === 'undefined' ) {
+					return;
+				}
+
+				data.wpforms_new_entries_entry_id = last_entry_id;
+				data.wpforms_new_entries_form_id  = $entriesList.find( 'input[name=form_id]' ).val();
 			} );
 
 			// Display entries list notification if Heartbeat API new form entries check is successful.
@@ -605,9 +612,9 @@
 						duration: 500,
 						start   : function () {
 							$( this ).css( {
-								display: 'block',
+								display: 'block'
 							} );
-						},
+						}
 					} );
 			} );
 		},
@@ -628,7 +635,6 @@
 					var $modalContent = this.$content,
 						$select       = $modalContent.find( 'select' ),
 						choices       = new Choices( $select[0], {
-							maxItemCount: 5,
 							shouldSort: false,
 							removeItemButton: true,
 							placeholderValue: wpforms_admin.choicesjs_fields_select + '...',
@@ -766,6 +772,12 @@
 				errorText,
 				successText;
 
+			if ( $btn.hasClass( 'status-go-to-url' ) ) {
+				// Open url in new tab.
+				window.open( $btn.attr('data-plugin'), '_blank' );
+				return;
+			}
+
 			$btn.prop( 'disabled', true ).addClass( 'loading' );
 			$btn.html( s.iconSpinner );
 
@@ -801,8 +813,8 @@
 
 			} else if ( $btn.hasClass( 'status-download' ) ) {
 				// Install & Activate.
-				action     = 'wpforms_install_addon';
-				cssClass   = 'status-active';
+				action   = 'wpforms_install_addon';
+				cssClass = 'status-active';
 				if ( plugin_type === 'plugin' ) {
 					cssClass += ' button disabled';
 				}
@@ -811,7 +823,7 @@
 				if ( plugin_type === 'addon' ) {
 					buttonText = s.iconActivate + wpforms_admin.addon_deactivate;
 				}
-				errorText  = s.iconInstall + wpforms_admin.addon_activate;
+				errorText = s.iconInstall + wpforms_admin.addon_activate;
 
 			} else {
 				return;
@@ -925,6 +937,26 @@
 							},
 							else : {
 								element: '#wpforms-setting-row-gdpr-disable-uuid,#wpforms-setting-row-gdpr-disable-details',
+								action:	 'hide'
+							}
+						},
+						effect: 'appear'
+					},
+					// reCAPTCHA > Score Threshold.
+					{
+						conditions: {
+							element:   'input[name=recaptcha-type]:checked',
+							type:      'value',
+							operator:  '=',
+							condition: 'v3'
+						},
+						actions: {
+							if: {
+								element: '#wpforms-setting-row-recaptcha-v3-threshold',
+								action:	 'show'
+							},
+							else : {
+								element: '#wpforms-setting-row-recaptcha-v3-threshold',
 								action:	 'hide'
 							}
 						},

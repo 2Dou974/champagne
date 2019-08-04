@@ -103,15 +103,6 @@ namespace WPForms {
 		public $logs;
 
 		/**
-		 * The Preview instance.
-		 *
-		 * @since 1.1.9
-		 *
-		 * @var \WPForms_Preview
-		 */
-		public $preview;
-
-		/**
 		 * The License class instance (Pro).
 		 *
 		 * @since 1.0.0
@@ -148,7 +139,6 @@ namespace WPForms {
 
 				self::$instance = new self();
 				self::$instance->constants();
-				self::$instance->conditional_logic_addon_check();
 				self::$instance->includes();
 
 				// Load Pro or Lite specific files.
@@ -195,30 +185,6 @@ namespace WPForms {
 		}
 
 		/**
-		 * Check to see if the conditional logic addon is running, if so then
-		 * deactivate the plugin to prevent conflicts.
-		 *
-		 * @since 1.3.8
-		 */
-		private function conditional_logic_addon_check() {
-
-			if ( function_exists( 'wpforms_conditional_logic' ) ) {
-
-				// Load core files needed to activate deactivate_plugins().
-				require_once ABSPATH . 'wp-admin/includes/plugin.php';
-				require_once ABSPATH . 'wp-includes/pluggable.php';
-
-				// Deactivate Conditional Logic addon.
-				deactivate_plugins( 'wpforms-conditional-logic/wpforms-conditional-logic.php' );
-
-				// To avoid namespace collisions, reload current page.
-				$url = esc_url_raw( remove_query_arg( 'wpforms-test' ) );
-				wp_redirect( $url );
-				exit;
-			}
-		}
-
-		/**
 		 * Include files.
 		 *
 		 * @since 1.0.0
@@ -241,10 +207,11 @@ namespace WPForms {
 			require_once WPFORMS_PLUGIN_DIR . 'includes/class-smart-tags.php';
 			require_once WPFORMS_PLUGIN_DIR . 'includes/class-logging.php';
 			require_once WPFORMS_PLUGIN_DIR . 'includes/class-widget.php';
-			require_once WPFORMS_PLUGIN_DIR . 'includes/class-preview.php';
 			require_once WPFORMS_PLUGIN_DIR . 'includes/class-conditional-logic-core.php';
 			require_once WPFORMS_PLUGIN_DIR . 'includes/emails/class-emails.php';
 			require_once WPFORMS_PLUGIN_DIR . 'includes/integrations.php';
+			require_once WPFORMS_PLUGIN_DIR . 'includes/class-license.php';
+			require_once WPFORMS_PLUGIN_DIR . 'includes/class-updater.php';
 
 			// Admin/Dashboard only includes, also in ajax.
 			if ( is_admin() ) {
@@ -264,7 +231,6 @@ namespace WPForms {
 				require_once WPFORMS_PLUGIN_DIR . 'includes/admin/ajax-actions.php';
 				require_once WPFORMS_PLUGIN_DIR . 'includes/admin/class-am-notification.php';
 				require_once WPFORMS_PLUGIN_DIR . 'includes/admin/class-am-deactivation-survey.php';
-				require_once WPFORMS_PLUGIN_DIR . 'includes/admin/class-am-dashboard-widget-extend-feed.php';
 			}
 		}
 
@@ -275,13 +241,27 @@ namespace WPForms {
 		 */
 		private function includes_magic() {
 
-			// Autoloader is put into its own file to save space here.
-			require_once WPFORMS_PLUGIN_DIR . 'autoloader.php';
+			// Autoload Composer packages.
+			require_once WPFORMS_PLUGIN_DIR . 'vendor/autoload.php';
+
+			if ( version_compare( phpversion(), '5.5', '>=' ) ) {
+				/*
+				 * Load PHP 5.5 email subsystem.
+				 */
+				add_action( 'wpforms_loaded', array( '\WPForms\Emails\Summaries', 'get_instance' ) );
+			}
 
 			/*
-			 * Load admin components.
+			 * Load admin components. Exclude from frontend.
 			 */
-			add_action( 'wpforms_loaded', array( '\WPForms\Admin\Loader', 'get_instance' ) );
+			if ( is_admin() ) {
+				add_action( 'wpforms_loaded', array( '\WPForms\Admin\Loader', 'get_instance' ) );
+			}
+
+			/*
+			 * Load form components.
+			 */
+			add_action( 'wpforms_loaded', array( '\WPForms\Forms\Loader', 'get_instance' ) );
 
 			/*
 			 * Properly init the providers loader, that will handle all the related logic and further loading.
@@ -307,7 +287,7 @@ namespace WPForms {
 			$this->process    = new \WPForms_Process();
 			$this->smart_tags = new \WPForms_Smart_Tags();
 			$this->logs       = new \WPForms_Logging();
-			$this->preview    = new \WPForms_Preview();
+			$this->license    = new \WPForms_License();
 
 			if ( is_admin() ) {
 				if ( ! wpforms_setting( 'hide-announcements', false ) ) {
@@ -321,6 +301,29 @@ namespace WPForms {
 
 			// Hook now that all of the WPForms stuff is loaded.
 			do_action( 'wpforms_loaded' );
+
+			$this->updater();
+		}
+
+		/**
+		 * Load plugin updater.
+		 *
+		 * @since 1.5.4
+		 */
+		public function updater() {
+
+			if ( ! is_admin() ) {
+				return;
+			}
+
+			$key = $this->license->get();
+
+			if ( ! $key ) {
+				return;
+			}
+
+			// Fire a hook for Addons to register their updater since we know the key is present.
+			do_action( 'wpforms_updater', $key );
 		}
 	}
 }
@@ -337,4 +340,16 @@ namespace {
 	function wpforms() {
 		return WPForms\WPForms::instance();
 	}
+
+	/**
+	 * Adding an alias for backward-compatibility with plugins
+	 * that still use class_exists('WPForms')
+	 * instead of function_exists('wpforms'), which is preferred.
+	 *
+	 * In 1.5.0 we removed support for PHP 5.2
+	 * and moved former WPForms class to a namespace: WPForms\WPForms.
+	 *
+	 * @since 1.5.1
+	 */
+	class_alias( 'WPForms\WPForms', 'WPForms' );
 }
