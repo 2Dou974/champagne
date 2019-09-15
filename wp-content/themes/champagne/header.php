@@ -57,5 +57,16 @@
     ?>
     <div class="chp-body container">
     <?php 
+    if (sizeof(WC()->cart->get_cart()) != 0) {
+        $wrap  = '<div class="alert alert-info" role="alert">';
+        $wrap .= '<a href="' . WC()->cart->get_cart_url() . '" class="cart_totals">';
+        $wrap .= "Voir mon panier (". WC()->cart->get_cart_total().")";
+        $wrap .= '</a>';
+        $wrap .='</div>';
+       
+      } else {
+        $wrap = '';
+      }
+      echo $wrap;
      }
     ?>
