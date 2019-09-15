@@ -147,7 +147,7 @@ a.navbar-brand {
     background-color: transparent;
     border: none;
     width: auto;
-    margin-top: 1em;
+    padding-top: 1em;
 }
 
 #menu-menu-1 li a:hover {
