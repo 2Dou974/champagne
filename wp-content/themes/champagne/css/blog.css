@@ -126,16 +126,28 @@ a.navbar-brand {
 }
 
 #menu-menu-1 li a {
-    width: 150px;
+    width: 140px;
     height: 56px;
-    margin: 10px 9px;
+    margin: 10px 5px;
     text-shadow: 1px 1px 2px rgba(48, 48, 48, .25);
     color: #555;
     font-size: 1.3em;
     text-align: center;
     background-color: rgba(58, 57, 63, 0.05);
     border: rgba(58, 87, 63, 0.1) 1px solid;
-    padding: 5px 15px;
+    padding: 5px 10px;
+}
+
+#menu-menu-1 li.chp_menu_oneLine a {
+    padding-top: 0.8em;
+}
+
+#menu-menu-1 li.chp_menu_simple a {
+    text-shadow: none;
+    background-color: transparent;
+    border: none;
+    width: auto;
+    margin-top: 1em;
 }
 
 #menu-menu-1 li a:hover {
@@ -145,12 +157,8 @@ a.navbar-brand {
 @media screen and (max-width: 1200px) {
     #menu-menu-1 li a {
         width: 115px;
-        padding: 30px 5px;
-        padding-top: 30px;
-        padding-right: 5px;
-        padding-bottom: 30px;
-        padding-left: 5px;
-        height: 80px;
+        padding: 10px 3px;
+        height: 60px;
         font-size: 1.2em;
     }
     #menu-menu-1 li a:hover {
@@ -159,17 +167,20 @@ a.navbar-brand {
     #menu-menu-1 .mn-exploitation a,
     #menu-menu-1 .mn-come a,
     #menu-menu-1 .mn-champagne a {
-        padding-top: 20px;
+        padding-top: 7px;
     }
 }
 
 @media screen and (max-width: 992px) {
     #menu-menu-1 li a {
-        width: 85px;
+        width: 84px;
         padding-top: 20px;
         height: 60px;
-        font-size: 0.9em;
-        margin-right: 5px;
+        font-size: 0.8em;
+        margin-right: 1px;
+    }
+    #menu-menu-1 li.chp_menu_oneLine a {
+        padding-top: 1.6em;
     }
     #menu-menu-1 li a:hover {
         font-size: 0.9em;
