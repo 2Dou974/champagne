@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce Stripe Payment Gateway - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-07-19 07:00:23+0000\n"
+"PO-Revision-Date: 2019-09-03 05:47:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -812,7 +812,7 @@ msgstr "customer_name"
 #. translators: 1) link to Stripe register page 2) link to Stripe api keys page
 #: includes/class-wc-gateway-stripe.php:90
 msgid "Stripe works by adding payment fields on the checkout and then sending the details to Stripe for verification. <a href=\"%1$s\" target=\"_blank\">Sign up</a> for a Stripe account, and <a href=\"%2$s\" target=\"_blank\">get your Stripe account keys</a>."
-msgstr "Stripe ajoute un formulaire sur la page de paiement, puis envoye les détails à Stripe pour vérification. <a href=\"%1$s\" target=\"_blank\">Inscrivez-vous</a> pour obtenir un compte Stripe, et <a href=\"%2$s\" target=\"_blank\">obtenez vos clés de compte Stripe</a>."
+msgstr "Stripe ajoute un formulaire sur la page de paiement, puis envoie les détails à Stripe pour vérification. <a href=\"%1$s\" target=\"_blank\">Inscrivez-vous</a> pour obtenir un compte Stripe, et <a href=\"%2$s\" target=\"_blank\">obtenez vos clés de compte Stripe</a>."
 
 #. translators: 1) HTML anchor open tag 2) HTML anchor closing tag
 #: includes/class-wc-stripe-apple-pay-registration.php:246
