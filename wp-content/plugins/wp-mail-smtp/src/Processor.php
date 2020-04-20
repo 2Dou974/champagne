@@ -152,12 +152,12 @@ class Processor {
 	public function filter_mail_from_email( $wp_email ) {
 
 		$options    = new Options();
-		$force      = $options->get( 'mail', 'from_email_force' );
+		$forced     = $options->get( 'mail', 'from_email_force' );
 		$from_email = $options->get( 'mail', 'from_email' );
 		$def_email  = $this->get_default_email();
 
 		// Return FROM EMAIL if forced in settings.
-		if ( $force & ! empty( $from_email ) ) {
+		if ( $forced & ! empty( $from_email ) ) {
 			return $from_email;
 		}
 
@@ -166,11 +166,7 @@ class Processor {
 			return $wp_email;
 		}
 
-		if ( ! empty( $from_email ) ) {
-			$wp_email = $from_email;
-		}
-
-		return $wp_email;
+		return ! empty( $from_email ) ? $from_email : $wp_email;
 	}
 
 	/**
@@ -210,7 +206,7 @@ class Processor {
 
 		$server_name = Geo::get_site_domain();
 
-		if ( empty( $sitename ) ) {
+		if ( empty( $server_name ) ) {
 			return '';
 		}
 
@@ -232,5 +228,25 @@ class Processor {
 	 */
 	public function get_default_name() {
 		return 'WordPress';
+	}
+
+	/**
+	 * Get or create the phpmailer.
+	 *
+	 * @since {VERSION}
+	 *
+	 * @return \WPMailSMTP\MailCatcher
+	 */
+	public function get_phpmailer() {
+
+		global $phpmailer;
+
+		// Make sure the PHPMailer class has been instantiated.
+		if ( ! is_object( $phpmailer ) || ! is_a( $phpmailer, 'PHPMailer' ) ) {
+			require_once ABSPATH . WPINC . '/class-phpmailer.php';
+			$phpmailer = new MailCatcher( true ); // phpcs:ignore
+		}
+
+		return $phpmailer;
 	}
 }

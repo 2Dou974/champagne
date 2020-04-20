@@ -1,0 +1,21 @@
+2020-04-20T12:32:13+00:00 CRITICAL Uncaught Error: Class 'Automattic\Jetpack\Connection\REST_Connector' not found in F:\projects\champagneVG\wp-content\plugins\jetpack\vendor\automattic\jetpack-connection\src\Manager.php:156
+Stack trace:
+#0 F:\projects\champagneVG\wp-includes\class-wp-hook.php(287): Automattic\Jetpack\Connection\Manager->initialize_rest_api_registration_connector(Object(WP_REST_Server))
+#1 F:\projects\champagneVG\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 F:\projects\champagneVG\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 F:\projects\champagneVG\wp-includes\rest-api.php(473): do_action('rest_api_init', Object(WP_REST_Server))
+#4 F:\projects\champagneVG\wp-includes\rest-api.php(431): rest_get_server()
+#5 F:\projects\champagneVG\wp-includes\rest-api.php(1552): rest_do_request(Object(WP_REST_Request))
+#6 [internal function]: rest_preload_api_request(Array, '/wc/v3')
+#7 F:\projects\champagneVG\wp-content\plugins\woocommerce-admin\src\Loader.php(575): array_reduce(Array, 'rest_preload_a dans F:\projects\champagneVG\wp-content\plugins\jetpack\vendor\automattic\jetpack-connection\src\Manager.php à la ligne 156
+
+2020-04-20T12:33:30+00:00 CRITICAL Uncaught Error: Undefined class constant 'QUEUE_GROUP' in F:\projects\champagneVG\wp-content\plugins\woocommerce-admin\includes\wc-admin-update-functions.php:70
+Stack trace:
+#0 F:\projects\champagneVG\wp-content\plugins\woocommerce\includes\class-wc-install.php(223): wc_admin_update_0251_remove_unsnooze_action()
+#1 F:\projects\champagneVG\wp-includes\class-wp-hook.php(287): WC_Install::run_update_callback('wc_admin_update...')
+#2 F:\projects\champagneVG\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#3 F:\projects\champagneVG\wp-includes\plugin.php(544): WP_Hook->do_action(Array)
+#4 F:\projects\champagneVG\wp-content\plugins\woocommerce\packages\action-scheduler\classes\actions\ActionScheduler_Action.php(22): do_action_ref_array('woocommerce_run...', Array)
+#5 F:\projects\champagneVG\wp-content\plugins\woocommerce\packages\action-scheduler\classes\abstracts\ActionScheduler_Abstract_QueueRunner.php(65): ActionScheduler_Action->execute()
+#6 F:\projects\champagneVG\wp-content\plugins\wooco dans F:\projects\champagneVG\wp-content\plugins\woocommerce-admin\includes\wc-admin-update-functions.php à la ligne 70
+

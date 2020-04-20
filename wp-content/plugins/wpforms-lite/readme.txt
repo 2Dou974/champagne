@@ -2,9 +2,9 @@
 Contributors: wpforms, jaredatch, smub, slaFFik
 Tags: contact form, contact form plugin, forms, form builder, custom form, contact button, contact me, custom contact form, form manager, form, forms builder, forms creator, captcha, recaptcha, Akismet, email form, web form, feedback form, payment form, survey form, donation form, email submit form, message form, mailchimp, mailchimp form, aweber, aweber form, paypal, paypal form, stripe, stripe form, getresponse, getresponse form, email subscription, contact form widget, user registration form, wordpress registration, wordpress login form, feedback
 Requires at least: 4.9
-Tested up to: 5.2
-Stable tag: 1.5.6
-Requires PHP: 5.4
+Tested up to: 5.3
+Stable tag: 1.5.9.5
+Requires PHP: 5.5
 License: GNU General Public License v2.0 or later
 
 The best WordPress contact form plugin. Drag & Drop online form builder that helps you create beautiful contact forms with just a few clicks.
@@ -15,7 +15,7 @@ The best WordPress contact form plugin. Drag & Drop online form builder that hel
 
 We believe that you shouldn't have to hire a developer to create a WordPress contact form. That's why we built <a href="https://wpforms.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend" title="WPForms">WPForms</a>, a drag & drop WordPress form builder that's EASY and POWERFUL.
 
-WPForms allows you to create beautiful contact forms, feedback form, subscription forms, payment forms, and other type of forms for your site in minutes, not hours!
+WPForms allows you to create beautiful contact forms, feedback form, subscription forms, payment forms, and other types of forms for your site in minutes, not hours!
 
 At WPForms, user experience is our #1 priority. Our pre-built form templates and workflows make WPForms the most beginner friendly contact form plugin in the market.
 
@@ -104,11 +104,11 @@ While WPForms started out as a contact form plugin, it has evolved into a powerf
 
 WPForms integrates with both PayPal and Stripe, so you can easily create a credit card payment form to accept payments on your website. If you're using SSL, then you can use our Stripe Payment form to accept credit card payments. Alternatively you can use our PayPal payment form to make a donation form and accept payments online.
 
-Aside from simple order forms, business owners also use WPForms to create custom product purchase forms, t-shit order forms, online booking forms, and more.
+Aside from simple order forms, business owners also use WPForms to create custom product purchase forms, t-shirt order forms, online booking forms, and more.
 
 We understand that sometimes you may need to create a contact form that require a signature. WPForms comes with a signature field to collect user signature on your WordPress forms or even create custom signature forms.
 
-You can do all of this while still using the same easy-to-use contact form builder that's loved by over 2 million users.
+You can do all of this while still using the same easy-to-use contact form builder that's loved by over 3 million users.
 
 >I am so impressed with this plugin. I decided to give it a shot over some of the other form plugins, and I am so glad I did. It works well, is so easy to use and customize. The support is amazing on top of it all. I got the pro version because I was so pleased. Highly recommend.<br>
 > Micky73 - WordPress user
@@ -159,7 +159,7 @@ Since contact forms are essential for marketing, WPForms is a must have plugin f
 
 * <a href="https://wpforms.com/addons/paypal-standard-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">PayPal Payment Forms</a> - Create PayPal forms to easily collect payments, donations, and online orders.
 * <a href="https://wpforms.com/addons/stripe-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Stripe Forms</a> - Easily collect credit card payments, donations, and online orders with our Stripe addon.
-* <a href="https://wpforms.com/addons/mailchimp-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">MailChimp Forms</a> - Create MailChimp newsletter signup forms in WordPress and connect with your contact form to grow your email list.
+* <a href="https://wpforms.com/addons/mailchimp-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Mailchimp Forms</a> - Create Mailchimp newsletter signup forms in WordPress and connect with your contact form to grow your email list.
 * <a href="https://wpforms.com/addons/aweber-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">AWeber Forms</a> - Create AWeber newsletter signup forms in WordPress and connect with your contact form to grow your email list.
 * <a href="https://wpforms.com/addons/campaign-monitor-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">Campaign Monitor Forms</a> - Create Campaign Monitor newsletter signup forms in WordPress and connect with your contact form to grow your email list.
 * <a href="https://wpforms.com/addons/getresponse-addon/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend">GetResponse Forms</a> - Create GetResponse newsletter signup forms in WordPress and connect with your contact form to grow your email list.
@@ -301,7 +301,7 @@ You can easily send data from your contact form and other WordPress forms to you
 
 Here is a list of our popular marketing integrations:
 
-* MailChimp
+* Mailchimp
 * Constant Contact
 * AWeber
 * Drip
@@ -400,6 +400,90 @@ Thank you
 Syed Balkhi
 
 == Changelog ==
+
+= 1.5.9.5 =
+- Fixed: do not try to process entries in Lite.
+
+= 1.5.9.4 =
+- Changed: Improve async notification emails scheduling compatibility with certain caching plugins and site installs.
+- Fixed: Some smart tags are not rendered correctly in the email notifications if sent asynchronously.
+
+= 1.5.9.1 =
+- Fixed: Checkbox image click doesn't work well to select an option.
+- Fixed: Do not allow empty connection names (spaces only) for providers.
+
+= 1.5.9 =
+- IMPORTANT: Support for PHP 5.4 has been discontinued. If you are running PHP 5.4, you MUST upgrade PHP before installing WPForms 1.5.9. Failure to do that will disable WPForms core functionality.
+- Added: New hooks and filters in several places, e.g. pre-deletion for entries/forms.
+- Added: Async/scheduled tasks management support (e.g. sending emails in the background).
+- Changed: Update the "How to Create Your First Contact Form" video URL.
+- Changed: Update the "How to Embed A Form" video URL in a Form Builder "Embed" modal.
+- Changed: Number Slider field: allow empty value in "Value Display" option.
+- Changed: Improved admin input field focus states to be more consistent with WordPress core.
+- Fixed: Numbers/Numbers Slider field: allow `0` value in email notifications and field smart tags output.
+- Fixed: Required Checkbox fields with `0` value not passing validation.
+- Fixed: Multiple Choice field could generate a PHP notice when the form was created after using a custom form template.
+- Fixed: Initialize tooltips properly for newly created Notifications/Confirmations.
+- Fixed: Ajax button should be re-enabled after incorrect form submission.
+- Fixed: Remove Javascript alert notice when form is viewed in AMP.
+- Fixed: Improve compatibility with the "Lazy Loading Feature Plugin" for Ajax spinner image on front-end.
+- Fixed: Validation issue with required Checkbox fields using Image Choices.
+- Fixed: Form builder preview issue with a field using Dynamic Choices setting.
+- Fixed: Number Field values not allowing leading zeros.
+- Fixed: Form Builder: templates search bar shows icon over text.
+- Fixed: Security hardening and improvements.
+
+= 1.5.8.2 =
+- Fixed: Can't add new line in textareas in the form builder (Notifications > Message etc).
+- Fixed: Choices editing block inside the form builder is hidden if creating a form using a template.
+
+= 1.5.8.1 =
+- Fixed: "Invalid form" error on form submit if AJAX form submissions is enabled and user is not logged in.
+
+= 1.5.8 =
+- Changed: Sullie logo in the Form Builder got his left hand back.
+- Changed: Hide image choices options if dynamic choices is enabled.
+- Changed: Adjusted Number field input to improve consistency across different browsers/devices.
+- Changed: Improve Block detection to load CSS styles earlier.
+- Changed: Open New Provider Connection modal after account has been added.
+- Changed: Improve the way Lite and Pro versions of the plugin activation handled.
+- Changed: Remove the unnecessary "Required" setting from a Number Slider field.
+- Fixed: Number slider incorrect label display in the form Builder preview panel.
+- Fixed: Quick links menu generating browser console error on Survey Print results page.
+- Fixed: Required validation message isn't removed immediately on choices selection.
+- Fixed: Form Builder styles compatibility with the new WordPress 5.3 styles.
+- Fixed: Correctly process Enter key press in Smart phone field when Enter is used to submit a form.
+- Fixed: Remove not-needed GET params from URL in Builder when a new form created to prevent race conditions with certain providers loading logic.
+- Fixed: Properly scroll in all major browsers to a faulty field in a form, including multi-page forms.
+- Fixed: Textarea character limit check returns an error if the content pasted is too large and contains '\r\n' line breaks.
+
+= 1.5.7 =
+- Added: Number Slider field.
+- Added: reCAPTCHA field in Form Builder allowing to easily manage the reCAPTCHA for a form.
+- Added: Admin area quick links menu.
+- Added: Analytics sub-menu page.
+- Added: SMTP sub-menu page.
+- Changed: Improved forms bulk actions processing.
+- Changed: Added a Form Builder splash screen which is displayed on mobile devices.
+- Changed: Display warning message if JavaScript is disabled in the browser.
+- Changed: Improved form front-end display and alignment for Gutenberg focused themes.
+- Changed: Improved invisible reCAPTCHA behavior when form is submitted.
+- Changed: Improved actions and filters for notification emails.
+- Fixed: Duplicate of the duplicated form created on page reload.
+- Fixed: Do not submit the form via AJAX (if enabled in form settings) when in AMP mode.
+- Fixed: WordPress 5.3 admin area styling issues.
+- Fixed: Number field incorrectly processing negative numbers.
+- Fixed: `page_url` Smart Tag issues.
+
+= 1.5.6.2 =
+- Added: Default value for "Paragraph text" field.
+- Fixed: WordPress 5.3 compatibility.
+- Fixed: Smart Phone countries squashed dropdown on screen-width <= 600px on themes with Base form styling selected.
+- Fixed: Field's Default value `0` disappears after saving and exiting the form builder.
+- Fixed: Smart Email field did not recognize `.dev` top level domains as valid.
+
+= 1.5.6.1 =
+- N/A: Pro only release.
 
 = 1.5.6 =
 - IMPORANT: Support for PHP 5.3 has been discontinued. If you are running PHP 5.3, you MUST upgrade PHP before installing WPForms 1.5.6. Failure to do that will disable WPForms core functionality.
