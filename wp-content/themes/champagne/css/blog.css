@@ -2,6 +2,14 @@ body {
     font-family: Raleway !important
 }
 
+.woocommerce form .form-row .input-checkbox {
+    margin: 7px 8px 0 0;
+}
+
+.woocommerce-terms-and-conditions-checkbox-text {
+    padding-left: 20px;
+}
+
 .parallax {
     /* The image used */
     /* background-image: url("img_parallax.jpg"); */
@@ -126,15 +134,13 @@ a.navbar-brand {
 }
 
 #menu-menu-1 li a {
-    width: 140px;
+    width: 130px;
     height: 56px;
     margin: 10px 5px;
     text-shadow: 1px 1px 2px rgba(48, 48, 48, .25);
     color: #555;
     font-size: 1.3em;
     text-align: center;
-    background-color: rgba(58, 57, 63, 0.05);
-    border: rgba(58, 87, 63, 0.1) 1px solid;
     padding: 5px 10px;
 }
 
@@ -151,12 +157,12 @@ a.navbar-brand {
 }
 
 #menu-menu-1 li a:hover {
-    background-color: rgba(58, 57, 63, 0.2);
+    font-weight: bold;
 }
 
 @media screen and (max-width: 1200px) {
     #menu-menu-1 li a {
-        width: 115px;
+        width: 105px;
         padding: 10px 3px;
         height: 60px;
         font-size: 1.2em;
@@ -173,7 +179,7 @@ a.navbar-brand {
 
 @media screen and (max-width: 992px) {
     #menu-menu-1 li a {
-        width: 84px;
+        width: 75px;
         padding-top: 20px;
         height: 60px;
         font-size: 0.8em;
@@ -534,4 +540,15 @@ a.navbar-brand {
     margin: 0 auto;
     width: auto;
     max-height: 300px;
+}
+
+.alert.alert-shop {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 0%, rgba(153, 153, 153, 1) 100%);
+    border: none;
+}
+
+.alert.alert-shop a,
+.alert.alert-shop a:visited {
+    color: #555;
+    font-weight: bold;
 }

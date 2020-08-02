@@ -95,3 +95,16 @@ function add_form_fields_example($term){
     </tr>
     <?php
 } 
+
+function my_account_menu_order() {
+    $menuOrder = array(
+        'dashboard'          => __( 'Dashboard', 'woocommerce' ),
+        'orders'             => __( 'Orders', 'woocommerce' ),
+        // 'downloads'          => __( 'Download', 'woocommerce' ),
+        'edit-address'       => __( 'Addresses', 'woocommerce' ),
+        'edit-account'    	=> __( 'Détails du compte', 'woocommerce' ),
+        'customer-logout'    => __( 'Logout', 'woocommerce' ),
+    );
+    return $menuOrder;
+}
+add_filter ( 'woocommerce_account_menu_items', 'my_account_menu_order' );
