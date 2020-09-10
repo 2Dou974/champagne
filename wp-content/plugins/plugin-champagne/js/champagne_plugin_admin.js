@@ -1,10 +1,9 @@
 var upload_image_custom_uploaders = upload_image_custom_uploaders || {};
 
-$(function() {
+jQuery(function($) {
     $('.upload_image_button').unbind().click(function(e) {
 
         e.preventDefault();
-
         var field_id = $(this).data('field-id');
 
         //If the uploader object has already been created, reopen the dialog
