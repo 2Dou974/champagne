@@ -56,16 +56,6 @@
      }else{
     ?>
     <div class="chp-body container">
-    <?php 
-       $wrap = '';
-    if (sizeof(WC()->cart->get_cart()) != 0) {
-        $wrap  = '<div class="alert alert-shop" role="alert"> ';
-        $wrap .= '<i class="fas fa-shopping-basket"></i> <a href="' . WC()->cart->get_cart_url() . '" class="cart_totals">';
-        $wrap .= "Voir mon panier (". WC()->cart->get_cart_total().")";
-        $wrap .= '</a>';
-        $wrap .='</div>';
-       
-      } 
-      echo $wrap;
+    <?php    
      }
     ?>

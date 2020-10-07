@@ -134,7 +134,7 @@ a.navbar-brand {
 }
 
 #menu-menu-1 li a {
-    width: 130px;
+    width: 110px;
     height: 56px;
     margin: 10px 5px;
     text-shadow: 1px 1px 2px rgba(48, 48, 48, .25);
@@ -162,7 +162,7 @@ a.navbar-brand {
 
 @media screen and (max-width: 1200px) {
     #menu-menu-1 li a {
-        width: 105px;
+        width: 90px;
         padding: 10px 3px;
         height: 60px;
         font-size: 1.2em;
@@ -179,7 +179,7 @@ a.navbar-brand {
 
 @media screen and (max-width: 992px) {
     #menu-menu-1 li a {
-        width: 75px;
+        width: 61px;
         padding-top: 20px;
         height: 60px;
         font-size: 0.8em;
